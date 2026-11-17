@@ -121,3 +121,25 @@ def test_function_definition():
     greet_with_closure = compose_greet_func_with_closure('John')
 
     assert greet_with_closure() == 'Hello there, John!'
+
+    
+    # Function with a default parameter.
+    def greet_with_default(name="Guest"):
+        return "Hello, " + name
+
+    # Test default parameter.
+    assert greet_with_default() == "Hello, Guest"
+
+    # Test with name.
+    assert greet_with_default("John") == "Hello, John"
+
+
+    # Function with input validation.
+    def validate_age(age):
+        if age < 0:
+            return "Invalid age"
+        return "Valid age"
+
+    # Test valid and invalid inputs.
+    assert validate_age(22) == "Valid age"
+    assert validate_age(-2) == "Invalid age"
