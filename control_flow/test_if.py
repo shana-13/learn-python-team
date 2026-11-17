@@ -27,30 +27,30 @@ def test_if_statement():
 
     assert conclusion == 'Number bigger than or equal to one'
 
-    def test_nested_conditions():
-        grade = 50
-        enrolled = True
-        if grade >= 50:
-            if enrolled:
-                result = 'Passed'
-            else:
-                result = 'Not enrolled'
+def test_nested_conditions():
+    grade = 50
+    enrolled = True
+    if grade >= 50:
+        if enrolled:
+            result = 'Passed'
         else:
-            result = 'Failed'
-        assert result == 'Passed'
+            result = 'Not enrolled'
+    else:
+        result = 'Failed'
+    assert result == 'Passed'
 
-    def test_multiple_elif_branches():
-        def grade(score):
-            if score >= 90:
-                return 'A'
-            elif score >= 80:
-                return 'B'
-            elif score >= 70:
-                return 'C'
-            else:
-                return 'F'
+def test_multiple_elif_branches():
+    def grade(score):
+        if score >= 90:
+            return 'A'
+        elif score >= 80:
+            return 'B'
+        elif score >= 70:
+            return 'C'
+        else:
+            return 'F'
 
-        assert grade(98) == 'A'
-        assert grade(82) == 'B'
-        assert grade(76) == 'C'
-        assert grade(39) == 'F'
+    assert grade(98) == 'A'
+    assert grade(82) == 'B'
+    assert grade(76) == 'C'
+    assert grade(39) == 'F'
